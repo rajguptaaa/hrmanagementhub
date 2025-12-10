@@ -28,6 +28,16 @@ app.options('*', cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.use((req, res, next) => {
+  console.log('---- INCOMING REQUEST ----');
+  console.log('URL:', req.url);
+  console.log('Method:', req.method);
+  console.log('Body:', req.body);
+  console.log('Headers Content-Type:', req.headers['content-type']);
+  next();
+});
+
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err))
