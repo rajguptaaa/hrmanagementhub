@@ -19,12 +19,15 @@ app.use(cors({
     'http://localhost:5173',
     // 'https://hrmanagementhub-7kna4unnd-raj-gupta-s-projects-2fb4e5da.vercel.app',
     // 'https://hrmanagementhub.vercel.app'
+    'https://hrmanagementhub.vercel.app',
+    'https://hrmanagementhub-git-main-raj-gupta-s-projects-2fb4e5da.vercel.app',
+    'https://hrmanagementhub-qz4l7rde1-raj-gupta-s-projects-2fb4e5da.vercel.app'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }))
-app.options('*', cors()); 
+app.options('*', cors());
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
